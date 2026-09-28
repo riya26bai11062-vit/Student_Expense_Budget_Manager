@@ -12,7 +12,7 @@ def monthly_summary():
     total = 0
 
     for expense in expenses:
-        total = total + expense["amount"]
+       total += expense["amount"]
 
     remaining = budget - total
 
@@ -36,7 +36,13 @@ def monthly_summary():
     for category in categories:
         print(category, ": ₹", categories[category])
 
-    highest_category = max(categories, key=categories.get)
+    highest_category = ""
+    highest_amount = 0
+
+    for category in categories:
+        if categories[category] > highest_amount:
+            highest_amount = categories[category]
+            highest_category = category
 
     print("\nHighest Spending Category:", highest_category)
     print("Amount Spent: ₹", categories[highest_category])

@@ -29,7 +29,7 @@ def add_expense():
 def view_expenses():
     print("\n----- All Expenses -----")
 
-    if len(expenses) == 0:
+    if not expenses:
         print("No expenses recorded yet.")
         return
     for expense in expenses:
@@ -61,7 +61,7 @@ def search_expense():
 def update_expense():
     print("\n----- Update Expense -----")
 
-    expense_id = int(input("Enter Expense ID: "))
+    expense_id = get_valid_id("Enter Expense ID: ")
 
     for expense in expenses:
         if expense["id"] == expense_id:
@@ -85,7 +85,7 @@ def update_expense():
 def delete_expense():
     print("\n----- Delete Expense -----")
 
-    expense_id = int(input("Enter Expense ID: "))
+    expense_id = get_valid_id("Enter Expense ID: ")
 
     for expense in expenses:
         if expense["id"] == expense_id:

@@ -56,7 +56,13 @@ def highest_spending_category():
         else:
             categories[category] = amount
 
-    highest_category = max(categories, key=categories.get)
+    highest_category = ""
+    highest_amount = 0
+
+    for category in categories:
+         if categories[category] > highest_amount:
+             highest_amount = categories[category]
+             highest_category = category
 
     print("Highest Spending Category:", highest_category)
     print("Amount Spent: ₹", categories[highest_category])
@@ -73,7 +79,7 @@ def average_daily_spending():
     dates = []
 
     for expense in expenses:
-        total = total + expense["amount"]
+        total += expense["amount"]
 
         if expense["date"] not in dates:
             dates.append(expense["date"])
@@ -83,6 +89,4 @@ def average_daily_spending():
     print("Total Spending: ₹", total)
     print("Number of Days:", len(dates))
     print("Average Daily Spending: ₹", average)
-    print("5. Monthly Summary")
-    print("6. Back to Main Menu")
     

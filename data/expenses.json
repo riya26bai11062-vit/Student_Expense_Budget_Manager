@@ -5,5 +5,12 @@
         "category": "Food",
         "description": "Lunch",
         "amount": 150
+    },
+    {
+        "id": 2,
+        "date": "1",
+        "category": "1",
+        "description": "1",
+        "amount": 11.0
     }
 ]
